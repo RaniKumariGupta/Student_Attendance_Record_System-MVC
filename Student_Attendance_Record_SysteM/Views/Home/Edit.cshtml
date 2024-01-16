@@ -1,0 +1,31 @@
+﻿@model Student_Attendance_Record_SysteM.Models.Student
+
+<h2>Edit Student Record</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label for="StudentName">Student Name:</label>
+        <input type="text" asp-for="StudentName" required />
+    </div>
+    <div>
+        <label for="Subject">Subject:</label>
+        <select asp-for="Subject" asp-items="@(new SelectList(ViewBag.Subjects))" required></select>
+    </div>
+    <div>
+        <label for="Level">Level:</label>
+        <input type="text" asp-for="Level" required />
+    </div>
+    <div>
+        <label for="DateEnrolled">Date Enrolled:</label>
+        <input type="date" asp-for="DateEnrolled" required />
+    </div>
+    <div>
+        <label for="IsPresent">Attendance Status:</label>
+        <input type="checkbox" asp-for="IsPresent" />
+    </div>
+    <div>
+        <button type="submit">Save Changes</button>
+    </div>
+</form>
